@@ -20,9 +20,13 @@ public class NeoStoxHomepagePOMclass
 		String UN = username.getText();
 		return UN;
 	}
-	public String getFunds() 
+	public String getFunds()
+	
+	
 	{
 		String avlBalance = balance.getText();
 		return avlBalance;
+		
+		
 	}
 }
