@@ -26,6 +26,7 @@ public class NeoStoxHomepagePOMclass
 	{
 		String avlBalance = balance.getText();
 		return avlBalance;
+		gggggg
 		
 		
 	}
