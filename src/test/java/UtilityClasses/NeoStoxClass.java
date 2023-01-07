@@ -3,10 +3,14 @@ package UtilityClasses;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 public class NeoStoxClass 
 {
@@ -23,5 +27,16 @@ public class NeoStoxClass
 		File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		File dest = new File("D:\\Selenium.png");
 		org.openqa.selenium.io.FileHandler.copy(src, dest);
+	}
+	
+	public static void ScrollIntoView(WebDriver driver, WebElement element ) 
+	{
+		JavascriptExecutor j = (JavascriptExecutor)driver;
+		j.executeScript("arguments[0].scrollIntoView");
+	}
+	
+	public static void wait(WebDriver driver, int time) 
+	{
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(time));
 	}
 }
